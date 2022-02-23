@@ -1,17 +1,19 @@
 import React,{useLayoutEffect} from "react";
-import {CATEGORIES,TODOITEMS} from '../data/dummy-data';
+import {CATEGORIES,EVENTS} from '../data/dummy-data';
 import { View, Text, Image,StyleSheet } from "react-native";
 import ToDoList from "../components/ToDoList"
+import { FlatList } from "react-native";
 import {Button} from 'react-native-elements';
 import {Ionicons} from '@expo/vector-icons';
 
 
 
-
 export default CategoryScreen = ({route, navigation}) => {
-    const {itemId} = route.params;
+  const events = EVENTS;
+  
+  const {itemId} = route.params;
     const selectedCategory = CATEGORIES.find(cat => cat.id === itemId);
-   // const displayedToDoItems = TODOITEMS.filter(item =>item.categoryId === itemId);
+    const displayedToDoItems = EVENTS.filter(event =>event.categoryId === itemId);
    
   //hat aktuell keinen Effekt, evtl später zu gebrauchen!
     useLayoutEffect(()=> {
@@ -30,13 +32,13 @@ export default CategoryScreen = ({route, navigation}) => {
     //hier sollen die Veranstaltungen gelistet werden - Zugriff auf Dummy Data
     //zunächst nur wenig Infos, wenn man drauf klickt, öffnet sich neuer Screen mit mehr Infos! Touchable Opacity oder Button
     return(
-        <View>
-          <Text style={{marginTop:100,marginLeft:80}}> Veranstaltung1 </Text>
-          <Text style={{marginTop:100,marginLeft:80}}> Veranstaltung2 </Text>
-          <Text style={{marginTop:100,marginLeft:80}}> Veranstaltung3 </Text>
-          <Text style={{marginTop:100,marginLeft:80}}> Veranstaltung4 </Text>
-          <Text style={{marginTop:100,marginLeft:80}}> Veranstaltung5 </Text>
-      </View>
+      <FlatList
+      data={displayedToDoItems}
+  
+      renderItem={(itemData) => 
+        { return <GridTile  text={itemData.item.title}  id={itemData.item.id} /> }}
+      numColumns={1} 
+    />
         
 
     );
