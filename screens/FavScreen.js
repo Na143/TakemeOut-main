@@ -1,10 +1,10 @@
 import React from "react";
 import ToDoList from '../components/ToDoList'
-import {TODOITEMS} from '../data/dummy-data'
+import {EVENTS} from '../data/dummy-data'
 import { View, Text, Keyboard } from "react-native";
 
 export default FavScreen = ({route,navigation}) => {
-    const favToDos = TODOITEMS.filter(item => item.isFav);
+    const favToDos = EVENTS.filter(item => item.isFav);
 
     //Hier sollen die favorisierten Veranstaltungen gelistet werden - siehe ToDoApp! 
     //Zugriff ebenfalls über Dummy-Data 

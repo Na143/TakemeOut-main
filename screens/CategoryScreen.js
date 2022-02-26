@@ -1,10 +1,12 @@
 import React,{useLayoutEffect} from "react";
 import {CATEGORIES,EVENTS} from '../data/dummy-data';
 import { View, Text, Image,StyleSheet } from "react-native";
-import ToDoList from "../components/ToDoList"
+
 import { FlatList } from "react-native";
 import {Button} from 'react-native-elements';
 import {Ionicons} from '@expo/vector-icons';
+
+import GridTileEvent from "../components/GridTileEvent";
 
 
 
@@ -13,9 +15,10 @@ export default CategoryScreen = ({route, navigation}) => {
   
   const {itemId} = route.params;
     const selectedCategory = CATEGORIES.find(cat => cat.id === itemId);
-    const displayedToDoItems = EVENTS.filter(event =>event.categoryId === itemId);
+    const displayedEvents = EVENTS.filter(event =>event.categoryId === itemId);
    
-  //hat aktuell keinen Effekt, evtl später zu gebrauchen!
+   
+
     useLayoutEffect(()=> {
         navigation.setOptions({
             headerTitle: selectedCategory.title,
@@ -33,10 +36,10 @@ export default CategoryScreen = ({route, navigation}) => {
     //zunächst nur wenig Infos, wenn man drauf klickt, öffnet sich neuer Screen mit mehr Infos! Touchable Opacity oder Button
     return(
       <FlatList
-      data={displayedToDoItems}
+      data={displayedEvents}
   
       renderItem={(itemData) => 
-        { return <GridTile  text={itemData.item.title}  id={itemData.item.id} /> }}
+        { return <GridTileEvent  text={itemData.item.title}  id={itemData.item.id} /> }}
       numColumns={1} 
     />
         
