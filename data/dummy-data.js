@@ -17,9 +17,9 @@ export const EVENTS = [
   new Event('m1', 'c1', 'El Toro','Kleiner Schäferkamp 21, 20357 Hamburg', true),
   new Event('m2', 'c1', 'Otto\'s Burger','Schanzenstraße 58,20357 Hamburg', false),
   new Event('m3', 'c1', 'Kimo','Schanzenstraße 111, 20357 Hamburg', false),
-  new Event('m4', 'c1', 'Yin Yang','Lattenkamp 8, 22299 Hamburg', true)
-  // new Event('m5', 'c2', 'Finish homework assignment 1', false),
-  // new Event('m6', 'c2', 'Get new Student ID Card', false),
+  new Event('m4', 'c1', 'Yin Yang','Lattenkamp 8, 22299 Hamburg', true),
+  new Event('m5', 'c2', 'Haus 73','Schulterblatt 73, 20357 Hamburg' ,false),
+  new Event('m6', 'c2', 'Black Forest Bar','Curschmannstraße 9, 20251 Hamburg', false)
   // new Event('m7', 'c3', 'Buy Tomatoes', false),
   // new Event('m8', 'c3', 'Buy Beer', true),
   // new Event('m9', 'c3', 'Buy Milk', true),
