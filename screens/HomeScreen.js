@@ -4,7 +4,7 @@ import GridTile from "../components/GridTile";
 import {Button} from 'react-native-elements';
 import {Ionicons} from '@expo/vector-icons';
 
-import { CATEGORIES } from '../data/dummy-data';
+import { CATEGORIES } from '../data/Data';
 
 export default HomeScreen = ({navigation}) => {
   const categories = CATEGORIES;
