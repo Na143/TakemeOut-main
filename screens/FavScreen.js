@@ -1,6 +1,6 @@
 import React from "react";
 import ToDoList from '../components/ToDoList'
-import {EVENTS} from '../data/dummy-data'
+import {EVENTS} from '../data/Data'
 import { View, Text, Keyboard } from "react-native";
 import GridTileEvent from "../components/GridTileEvent";
 

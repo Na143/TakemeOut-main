@@ -1,9 +1,10 @@
 class Event {
-  constructor(id, categoryId, title, address, isFav) {
+  constructor(id, categoryId, title, latitude,longitude, isFav) {
     this.id = id;
     this.categoryId = categoryId;
     this.title = title;
-    this.address = address;
+    this.latitude = latitude;
+    this.longitude = longitude;
     this.isFav = isFav;
   }
 }

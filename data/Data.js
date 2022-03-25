@@ -14,12 +14,12 @@ export const CATEGORIES = [
 ];
 
 export const EVENTS = [
-  new Event('m1', 'c1', 'El Toro','Kleiner Schäferkamp 21, 20357 Hamburg', true),
-  new Event('m2', 'c1', 'Otto\'s Burger','Schanzenstraße 58,20357 Hamburg', false),
-  new Event('m3', 'c1', 'Kimo','Schanzenstraße 111, 20357 Hamburg', false),
-  new Event('m4', 'c1', 'Yin Yang','Lattenkamp 8, 22299 Hamburg', true),
-  new Event('m5', 'c2', 'Haus 73','Schulterblatt 73, 20357 Hamburg' ,false),
-  new Event('m6', 'c2', 'Black Forest Bar','Curschmannstraße 9, 20251 Hamburg', false)
+  new Event('m1', 'c1', 'El Toro','53.56685','9.96872', true),
+  new Event('m2', 'c1', 'Otto\'s Burger','51.0625170822','13.7498831749', false),
+  new Event('m3', 'c1', 'Kimo','53.56442','9.96538', false),
+  new Event('m4', 'c1', 'Yin Yang','53.60096','9.99541', true),
+  new Event('m5', 'c2', 'Haus 73','53.562347','9.961065' ,false),
+  new Event('m6', 'c2', 'Black Forest Bar','53.585318','9.980334', false)
   // new Event('m7', 'c3', 'Buy Tomatoes', false),
   // new Event('m8', 'c3', 'Buy Beer', true),
   // new Event('m9', 'c3', 'Buy Milk', true),

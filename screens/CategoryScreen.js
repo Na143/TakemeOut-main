@@ -1,5 +1,5 @@
 import React,{useLayoutEffect} from "react";
-import {CATEGORIES,EVENTS} from '../data/dummy-data';
+import {CATEGORIES,EVENTS} from '../data/Data';
 import { View, Text, Image,StyleSheet } from "react-native";
 
 import { FlatList } from "react-native";

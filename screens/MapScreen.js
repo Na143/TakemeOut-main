@@ -1,27 +1,41 @@
 import * as React from 'react';
-import MapView from 'react-native-maps';
-import { Marker } from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE, Marker} from 'react-native-maps';
+//import { Marker } from 'react-native-maps';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import { EVENTS } from '../data/Data'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <MapView style={styles.map} />
+      <MapView
+      provider={PROVIDER_GOOGLE} 
+      style={styles.map}
+      initialRegion={{
+        latitude: 53.551086,
+        longitude: 9.993682,
+        latitudeDelta: 0.0922,
+        longitudeDelta: 0.0421,
+      }}
+       >
+
+         {
+          EVENTS.map(marker => (
+            <Marker
+            coordinate = {{latitude: marker.latitude,
+              longitude: marker.longitude}}
+              title = {marker.title}
+              /> 
+
+          ))
+
+         }
+
+
+      </MapView>
     </View>
   );
 }
-// var map;
-// function initMap() {
-//   map = new google.maps.map(document.getElementById('map'), {
-//     center: { lat: 53.551086, lng: 9.993682 },
-//     Zoom: 9
-//   });
-//   var marker = new google.maps.marker((
-//     position: {lat: 53.551086, lng: 9.993682},
-//     map: map,
-//     title: "Hello World!"
-//   });
-// },
+
 
 
 const styles = StyleSheet.create({
