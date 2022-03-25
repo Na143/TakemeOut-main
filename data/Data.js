@@ -5,11 +5,9 @@ export const CATEGORIES = [
   new Category('c1', 'Restaurants', '#f5428d'),
   new Category('c2', 'Bars', '#f54242'),
   new Category('c3', 'Cafes', '#f5a442'),
-  new Category('c4', 'Theater', '#f5d142'),
-  new Category('c5', 'Oper', '#368dff'),
-  new Category('c6', 'Konzerte', '#41d95d'),
-  new Category('c7', 'Clubs', '#9eecff'),
-  new Category('c8', 'Family & Kids', '#b9ffb0'),
+  new Category('c4', 'Kultur', '#f5d142'),
+  new Category('c5', 'Clubs', '#9eecff'),
+
   
 ];
 
