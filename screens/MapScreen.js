@@ -2,7 +2,7 @@ import * as React from 'react';
 import MapView, { PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 //import { Marker } from 'react-native-maps';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
-import { EVENTS } from '../data/Data'
+import { LOCATIONS } from '../data/Data'
 
 export default function App() {
   return (
@@ -19,7 +19,7 @@ export default function App() {
        >
 
          {
-          EVENTS.map(marker => (
+          LOCATIONS.map(marker => (
             <Marker
             coordinate = {{latitude: marker.latitude,
               longitude: marker.longitude}}

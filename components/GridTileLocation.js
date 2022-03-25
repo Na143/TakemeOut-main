@@ -1,10 +1,11 @@
 
 import React, { useState } from "react";
-import { Modal, StyleSheet, Text, Pressable, TouchableOpacity } from "react-native";
+import { Modal, Image, StyleSheet, Text, Pressable, TouchableOpacity } from "react-native";
 
 
 
-export default GridTileEvent = props => {
+
+export default GridTileLocation = props => {
     const [modalVisible, setModalVisible] = useState(false);
     return (
 
@@ -30,13 +31,18 @@ export default GridTileEvent = props => {
                     style={[ styles.modalView]}
                     onPress={() => setModalVisible(!modalVisible)}
                 >
+              
                     <Text style={styles.modalText}>{props.text}</Text>
+                    <Text style={styles.modalText}>{props.text2}</Text>
+                    
+                   
+                    
                 </Pressable>
 
             </Modal>
 
             <Text style={styles.gridText}>{props.text}</Text>
-
+           
 
         </TouchableOpacity>
 
@@ -76,7 +82,7 @@ const styles = StyleSheet.create({
         margin: 20,
         marginTop: 140,
         padding: 20,
-        width: 374,
+        width: 300,
         height: 100,
         backgroundColor: '#da7f8f',
         alignItems: "flex-start",
