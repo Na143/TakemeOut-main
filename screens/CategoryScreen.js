@@ -39,7 +39,7 @@ export default CategoryScreen = ({route, navigation}) => {
       data={displayedLocations}
   
       renderItem={(itemData) => 
-        { return <GridTileLocation  text={itemData.item.title} text2={itemData.item.address} id={itemData.item.id} /> }}
+        { return <GridTileLocation  lat={itemData.item.latitude} lon={itemData.item.longitude} text={itemData.item.title} text2={itemData.item.address} id={itemData.item.id} /> }}
       numColumns={1} 
     />
         

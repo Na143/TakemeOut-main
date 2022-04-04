@@ -1,14 +1,40 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal, Image, StyleSheet, Text, Pressable, TouchableOpacity } from "react-native";
-
+import { showLocation } from 'react-native-map-link'
+import * as Location from "expo-location";
 
 
 
 export default GridTileLocation = props => {
     const [modalVisible, setModalVisible] = useState(false);
+    
+    //get the current position (latitude/longitude)
+    const [location, setLocation] = useState(null);
+    const [errorMsg, setErrorMsg] = useState(null);
+    const [latitude, setLatitude] = useState(null);
+    const [longitude, setLongitude] = useState(null);
+  
+    useEffect(() => {
+      (async () => {
+        let { status } = await Location.requestForegroundPermissionsAsync();
+        if (status !== 'granted') {
+          setErrorMsg('Permission to access location was denied');
+          return;
+        }
+        let location = await Location.getCurrentPositionAsync({});
+        setLatitude(location.coords.latitude)
+        setLongitude(location.coords.longitude);
+        setLocation(location);
+      
+      })();
+    }, []);
+  
+    
+    if (errorMsg) {
+      alert(errorMsg);
+    }
     return (
-
 
 
         <TouchableOpacity
@@ -33,8 +59,24 @@ export default GridTileLocation = props => {
                 >
               
                     <Text style={styles.modalText}>{props.text}</Text>
-                    <Text style={styles.modalText}>{props.text2}</Text>
+                    <TouchableOpacity
+                        onPress={()=> showLocation({
+                            latitude: props.lat,
+                            longitude: props.lon,
+                            sourceLatitude: latitude,  
+                            sourceLongitude: longitude
                     
+                        
+                        
+                        })}
+                    
+                    >
+                    <Text style={styles.addressText}>{props.text2}</Text>
+                 
+                
+                   
+                    </TouchableOpacity>
+                
                    
                     
                 </Pressable>
@@ -45,6 +87,7 @@ export default GridTileLocation = props => {
            
 
         </TouchableOpacity>
+       
 
     );
 };
@@ -76,7 +119,7 @@ const styles = StyleSheet.create({
 
     },
     modalView: {
-        flex: 0.85,
+        flex: 0.55,
         flexDirection: 'column',
 
         margin: 20,
@@ -84,7 +127,7 @@ const styles = StyleSheet.create({
         padding: 20,
         width: 300,
         height: 100,
-        backgroundColor: '#da7f8f',
+        backgroundColor: '#FDD7AA',
         alignItems: "flex-start",
         justifyContent: "flex-start",
         borderRadius: 10,
@@ -94,9 +137,16 @@ const styles = StyleSheet.create({
         shadowRadius: 10
       },
       modalText: {
-        fontSize: 14,
+        fontSize: 24,
         fontWeight: 'bold',
         textAlign: 'left',
         color: "#faf3f3"
+      },
+      addressText: {
+        fontSize: 12,
+        fontWeight: 'bold',
+        textAlign: 'left',
+        color: "#faf3f3",
+        textDecorationLine: 'underline'
       }
 });
