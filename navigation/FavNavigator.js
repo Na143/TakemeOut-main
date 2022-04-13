@@ -8,11 +8,11 @@ export default FavNavigator = () => {
     return (
 
         <FavStack.Navigator initialRouteName='Favorites' screenOptions={{
-            headerStyle: { height: 120 },
+            headerStyle: { height: 120, backgroundColor: '#ffffff'},
             headerTitleStyle: {
                 fontSize: 32,
                 fontWeight: 'bold',
-                color: '#94d0cc'
+                color: '#5049b3'
 
             }
 

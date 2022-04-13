@@ -25,7 +25,7 @@ export default CategoryScreen = ({route, navigation}) => {
             headerRight: () => (
                 <Button 
                   type ='clear' 
-                  icon={<Ionicons name='' size={32} color="rgb(0,122,255)"
+                  icon={<Ionicons name='' size={32} color="#d1d2fb"
                   onPress={()=>{navigation.navigate("AddEntry",{title:"ToDO"},{category: selectedCategory.title})}}
                   />}/>)
         })
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     tinyLogo: {
       paddingTop:140,  
   
-      width: 320,
+      width: 120,
       height: 10,
     },
     logo: {

@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
         padding: 15,
         width: 300,
         height: 100,
-        backgroundColor: '#da7f8f',
+        backgroundColor: '#5049b3',
         alignItems: "flex-end",
         justifyContent: "flex-end",
         borderRadius: 10,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         shadowRadius: 10
     },
     gridText: {
-        fontSize: 14,
+        fontSize: 16,
         fontWeight: 'bold',
         textAlign: 'right',
         color: "#faf3f3"
@@ -74,11 +74,11 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
 
         margin: 20,
-        marginTop: 140,
+        marginTop: 179,
         padding: 20,
-        width: 374,
+        width: 352,
         height: 100,
-        backgroundColor: '#da7f8f',
+        backgroundColor: '#ffffff',
         alignItems: "flex-start",
         justifyContent: "flex-start",
         borderRadius: 10,
@@ -88,9 +88,9 @@ const styles = StyleSheet.create({
         shadowRadius: 10
       },
       modalText: {
-        fontSize: 14,
+        fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'left',
-        color: "#faf3f3"
+        color: "#ff00ff"
       }
 });

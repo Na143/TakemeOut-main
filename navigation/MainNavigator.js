@@ -31,8 +31,8 @@ export default MainNavigator = () => {
                     },
                 })}
                 tabBarOptions={{
-                    activeTintColor: '#94d0cc',
-                    inactiveTintColor: 'gray',
+                    activeTintColor: '#d1d2fb',
+                    inactiveTintColor: '#5049b3',
                 }}>
                 <Tab.Screen name='Home' component={HomeNavigator} />
                 <Tab.Screen name='Karte' component={MapNavigator} />

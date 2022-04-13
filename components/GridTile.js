@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     padding:15,
     width:300,
     height: 100,
-    backgroundColor:'#da7f8f',
+    backgroundColor:'#d1d2fb',
     alignItems: "flex-end",
     justifyContent: "flex-end",
     borderRadius: 10,
@@ -39,10 +39,10 @@ const styles = StyleSheet.create({
     shadowRadius: 10
   },
   gridText:{
-      fontSize:14,
+      fontSize:16,
       fontWeight: 'bold',
       textAlign:'right',
-      color:"#faf3f3"
+      color:"#5049b3"
 
   },
 });
