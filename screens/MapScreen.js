@@ -25,7 +25,7 @@ export default function App() {
             coordinate = {{latitude: marker.latitude,
               longitude: marker.longitude}}
               title = {marker.title}
-              />
+              /> 
 
           ))
 

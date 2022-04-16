@@ -1,5 +1,5 @@
 import Category from '../models/category';
-import Location from '../models/Location';
+import Event from '../models/event';
 
 export const CATEGORIES = [
   new Category('c1', 'Restaurants', '#d1d2fb'),
