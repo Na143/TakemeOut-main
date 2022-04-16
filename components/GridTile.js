@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     shadowRadius: 10
   },
   gridText:{
-      fontSize:16,
+      fontSize:18,
       fontWeight: 'bold',
       textAlign:'right',
       color:"#5049b3"

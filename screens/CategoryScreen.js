@@ -1,21 +1,21 @@
 import React,{useLayoutEffect} from "react";
-import {CATEGORIES,EVENTS} from '../data/Data';
+import {CATEGORIES,LOCATIONS} from '../data/Data';
 import { View, Text, Image,StyleSheet } from "react-native";
 
 import { FlatList } from "react-native";
 import {Button} from 'react-native-elements';
 import {Ionicons} from '@expo/vector-icons';
 
-import GridTileEvent from "../components/GridTileEvent";
+import GridTileLocation from "../components/GridTileLocation";
 
 
 
 export default CategoryScreen = ({route, navigation}) => {
-  const events = EVENTS;
+
   
   const {itemId} = route.params;
     const selectedCategory = CATEGORIES.find(cat => cat.id === itemId);
-    const displayedEvents = EVENTS.filter(event =>event.categoryId === itemId);
+    const displayedLocations = LOCATIONS.filter(event =>event.categoryId === itemId);
    
    
 
@@ -36,10 +36,10 @@ export default CategoryScreen = ({route, navigation}) => {
     //zunächst nur wenig Infos, wenn man drauf klickt, öffnet sich neuer Screen mit mehr Infos! Touchable Opacity oder Button
     return(
       <FlatList
-      data={displayedEvents}
+      data={displayedLocations}
   
       renderItem={(itemData) => 
-        { return <GridTileEvent  text={itemData.item.title}  id={itemData.item.id} /> }}
+        { return <GridTileLocation  lat={itemData.item.latitude} lon={itemData.item.longitude} text={itemData.item.title} text2={itemData.item.address} id={itemData.item.id} /> }}
       numColumns={1} 
     />
         
