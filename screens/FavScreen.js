@@ -1,21 +1,32 @@
-import React from "react";
-import ToDoList from '../components/ToDoList'
-import {LOCATIONS} from '../data/Data'
-import { View, Text, Keyboard } from "react-native";
+import React ,{useContext} from "react";
+
 import GridTileLocation from "../components/GridTileLocation";
+import { ToDoContext } from "../data/ToDoContext";
 
 import { FlatList } from "react-native";
-export default FavScreen = ({route,navigation}) => {
-    const favToDos = LOCATIONS.filter(item => item.isFav);
 
-    //Hier sollen die favorisierten Veranstaltungen gelistet werden - siehe ToDoApp! 
-    //Zugriff ebenfalls über Dummy-Data 
+export default FavScreen = ({route,navigation}) => {
+  const [toDoData,setToDoData] = useContext(ToDoContext);  
+    const favToDos = toDoData.locations.filter(item => item.isFav);
+    const favHandler = (id)=>{
+ 
+      let toDoItemToChange = toDoData.locations.find(toDoItem => toDoItem.id === id);
+      toDoItemToChange.isFav = !toDoItemToChange.isFav;
+  
+      setToDoData(toDoData => ({
+        categories: toDoData.categories, locations: toDoData.locations.map(toDoItem => toDoItem.id === id ? toDoItemToChange : toDoItem),
+  
+      }));
+  
+     }
+
+   
     return(
       <FlatList
      data={favToDos}
   
       renderItem={(favToDos) => 
-        { return <GridTileLocation  text={favToDos.item.title}  id={favToDos.item.id} /> }}
+        { return <GridTileLocation onFav={favHandler} isFav={favToDos.item.isFav} lat={favToDos.item.latitude} lon={favToDos.item.longitude} text={favToDos.item.title} text2={favToDos.item.address} id={favToDos.item.id} /> }}
       numColumns={1} 
     />
         

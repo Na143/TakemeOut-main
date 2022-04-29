@@ -14,7 +14,7 @@ export const CATEGORIES = [
 export const LOCATIONS = [
   new Location('m1', 'c1', 'El Toro',53.56685,9.96872, 'Kleiner Schäferkamp 21, 20357 Hamburg',true),
   new Location('m2', 'c1', 'Otto\'s Burger',53.56182,9.96594, 'Schanzenstraße 58, 20357 Hamburg', false),
-  new Location('m3', 'c1', 'Kino',53.56442,9.96538,'Schanzenstraße 111, 20357 Hamburg', false),
+  new Location('m3', 'c1', 'Kimo',53.56442,9.96538,'Schanzenstraße 111, 20357 Hamburg', false),
   new Location('m4', 'c1', 'Yin Yang',53.60096,9.99541, 'Lattenkamp 8, 22299 Hamburg',true),
   new Location('m5','c1', 'Soulkebab', 53.58799,10.04574,'Fuhlsbüttler Str. 97, 22305 Hamburg',false),
   new Location('m6', 'c2', 'Haus 73',53.562347,9.961065 , 'Schulterblatt 73, 20357 Hamburg', false),

@@ -1,7 +1,7 @@
 import React from "react";
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from "../screens/HomeScreen";
-import InputScreen from '../screens/InputScreen';
+
 import CategoryScreen from "../screens/CategoryScreen";
 import MapScreen from '../screens/MapScreen';
 import { BackgroundImage } from "react-native-elements/dist/config";

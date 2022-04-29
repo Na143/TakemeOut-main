@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import { Modal, Image, StyleSheet, Text, Pressable, TouchableOpacity } from "react-native";
 import { showLocation } from 'react-native-map-link'
 import * as Location from "expo-location";
-
+import {Button} from 'react-native-elements';
+import {Ionicons} from '@expo/vector-icons';
 
 
 export default GridTileLocation = props => {
@@ -14,6 +15,7 @@ export default GridTileLocation = props => {
     const [errorMsg, setErrorMsg] = useState(null);
     const [latitude, setLatitude] = useState(null);
     const [longitude, setLongitude] = useState(null);
+    const faveIconName = props.isFav ? "ios-star" : "ios-star-outline";
   
     useEffect(() => {
       (async () => {
@@ -32,17 +34,22 @@ export default GridTileLocation = props => {
   
     
     if (errorMsg) {
-      alert(errorMsg);
+      alert(errorMsg); 
     }
     return (
-
 
         <TouchableOpacity
             style={styles.itemContainer}
             onPress={() => setModalVisible(true)}
-
-
         >
+            
+            <Button onPress={()=> {props.onFav(props.id)}}
+            style={styles.favStyle} 
+            type="clear" icon={<Ionicons 
+            name={faveIconName} size={24} 
+            color="#5049b3"  />}/> 
+
+            
             <Modal
                 animationType="fade"
                 transparent={true}
@@ -52,7 +59,6 @@ export default GridTileLocation = props => {
                 }}
             >
 
-             
                 <Pressable
                     style={[ styles.modalView]}
                     onPress={() => setModalVisible(!modalVisible)}
@@ -65,29 +71,22 @@ export default GridTileLocation = props => {
                             longitude: props.lon,
                             sourceLatitude: latitude,  
                             sourceLongitude: longitude
-                    
-                        
+
                         
                         })}
                     
                     >
                     <Text style={styles.addressText}>{props.text2}</Text>
                  
-                
-                   
                     </TouchableOpacity>
-                
-                   
                     
                 </Pressable>
 
             </Modal>
 
             <Text style={styles.gridText}>{props.text}</Text>
-           
 
         </TouchableOpacity>
-       
 
     );
 };
@@ -103,13 +102,17 @@ const styles = StyleSheet.create({
         width: 300,
         height: 100,
         backgroundColor: '#d1d2fb',
-        alignItems: "flex-end",
-        justifyContent: "flex-end",
+        //alignItems: "flex-end",
+        //justifyContent: "flex-end",
         borderRadius: 10,
         shadowColor: "black",
         shadowOpacity: 0.25,
         shadowOffset: { width: 0, height: 2 },
         shadowRadius: 10
+    },
+    favStyle:{
+        alignItems: 'flex-start',
+        
     },
     gridText: {
         fontSize: 18,
