@@ -6,6 +6,7 @@ import { FlatList } from "react-native";
 import { Button } from 'react-native-elements';
 import { Ionicons } from '@expo/vector-icons';
 import { ToDoContext } from "../data/ToDoContext";
+import { storeDate } from "../data/AppStorage";
 
 import GridTileLocation from "../components/GridTileLocation";
 
@@ -28,6 +29,7 @@ export default CategoryScreen = ({ route, navigation }) => {
       categories: toDoData.categories, locations: toDoData.locations.map(toDoItem => toDoItem.id === id ? toDoItemToChange : toDoItem),
 
     }));
+    storeDate(toDoData)
 
   }
 
