@@ -22,6 +22,7 @@ export default function App() {
           LOCATIONS.map(marker => (
 
             <Marker
+            key={Math.random()}
             coordinate = {{latitude: marker.latitude,
               longitude: marker.longitude}}
               title = {marker.title}
