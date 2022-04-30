@@ -2,6 +2,7 @@ import React ,{useContext} from "react";
 
 import GridTileLocation from "../components/GridTileLocation";
 import { ToDoContext } from "../data/ToDoContext";
+import { storeDate } from "../data/AppStorage";
 
 import { FlatList } from "react-native";
 
@@ -17,6 +18,7 @@ export default FavScreen = ({route,navigation}) => {
         categories: toDoData.categories, locations: toDoData.locations.map(toDoItem => toDoItem.id === id ? toDoItemToChange : toDoItem),
   
       }));
+      storeDate(toDoData)
   
      }
 
