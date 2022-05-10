@@ -1,10 +1,11 @@
 
 import React, { useState, useEffect } from "react";
 import { Modal, Image, StyleSheet, Text, Pressable, TouchableOpacity } from "react-native";
-import { showLocation } from 'react-native-map-link'
+//import { showLocation } from 'react-native-map-link';
 import * as Location from "expo-location";
-import {Button} from 'react-native-elements';
-import {Ionicons} from '@expo/vector-icons';
+import {Button, Linking} from 'react-native-elements';
+//import {Ionicons} from '@expo/vector-icons';
+import FaveIconName from 'react-native-vector-icons/Entypo';
 
 
 export default GridTileLocation = props => {
@@ -15,7 +16,9 @@ export default GridTileLocation = props => {
     const [errorMsg, setErrorMsg] = useState(null);
     const [latitude, setLatitude] = useState(null);
     const [longitude, setLongitude] = useState(null);
-    const faveIconName = props.isFav ? "ios-star" : "ios-star-outline";
+
+
+
   
     useEffect(() => {
       (async () => {
@@ -42,12 +45,10 @@ export default GridTileLocation = props => {
             style={styles.itemContainer}
             onPress={() => setModalVisible(true)}
         >
-            
-            <Button onPress={()=> {props.onFav(props.id)}}
-            style={styles.favStyle} 
-            type="clear" icon={<Ionicons 
-            name={faveIconName} size={24} 
-            color="#5049b3"  />}/> 
+
+             <FaveIconName name={props.isFav ? "star" : "star-outlined"}
+              size={30} color="#5049b3"onPress={()=> {props.onFav(props.id)}}
+                       />
 
             
             <Modal
@@ -60,7 +61,7 @@ export default GridTileLocation = props => {
             >
 
                 <Pressable
-                    style={[ styles.modalView]}
+                    style={[styles.modalView]}
                     onPress={() => setModalVisible(!modalVisible)}
                 >
               
@@ -96,9 +97,8 @@ const styles = StyleSheet.create({
 
         flex: 1,
         flexDirection: 'column',
-
         margin: 20,
-        padding: 15,
+        padding: 5,
         width: 300,
         height: 100,
         backgroundColor: '#d1d2fb',
@@ -111,8 +111,11 @@ const styles = StyleSheet.create({
         shadowRadius: 10
     },
     favStyle:{
-        alignItems: 'flex-start',
-        
+        //alignItems:'flex-start',
+        //cursor: pointer
+        width:20,
+        height:20,
+
     },
     gridText: {
         fontSize: 18,

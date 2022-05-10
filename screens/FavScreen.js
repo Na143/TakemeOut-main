@@ -28,7 +28,9 @@ export default FavScreen = ({route,navigation}) => {
      data={favToDos}
   
       renderItem={(favToDos) => 
-        { return <GridTileLocation onFav={favHandler} isFav={favToDos.item.isFav} lat={favToDos.item.latitude} lon={favToDos.item.longitude} text={favToDos.item.title} text2={favToDos.item.address} id={favToDos.item.id} /> }}
+        { return <GridTileLocation onFav={favHandler} isFav={favToDos.item.isFav}
+        lat={favToDos.item.latitude} lon={favToDos.item.longitude}
+        text={favToDos.item.title} text2={favToDos.item.address} id={favToDos.item.id} /> }}
       numColumns={1} 
     />
         
