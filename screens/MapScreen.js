@@ -1,5 +1,5 @@
 import * as React from 'react';
-import MapView, { PROVIDER_GOOGLE, Marker} from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE, Marker, PROVIDER_DEFAULT} from 'react-native-maps';
 import { StyleSheet, Text, View, Dimensions, Linking } from 'react-native';
 import { LOCATIONS } from '../data/Data'
 

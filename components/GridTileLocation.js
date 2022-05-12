@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Modal, Image, StyleSheet, Text, Pressable, TouchableOpacity } from "react-native";
-//import { showLocation } from 'react-native-map-link';
+import { showLocation } from 'react-native-map-link';
 import * as Location from "expo-location";
 import {Button, Linking} from 'react-native-elements';
 //import {Ionicons} from '@expo/vector-icons';
