@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
         color: "#faf3f3"
       },
       addressText: {
-        fontSize: 12,
+        fontSize: 14,
         fontWeight: 'bold',
         textAlign: 'left',
         color: "#faf3f3",
