@@ -43,6 +43,7 @@ export default GridTileLocation = props => {
             onPress={() => setModalVisible(true)}
         >
             
+            
             <Button onPress={()=> {props.onFav(props.id)}}
             style={styles.favStyle} 
             type="clear" icon={<Ionicons 
@@ -51,20 +52,28 @@ export default GridTileLocation = props => {
 
             
             <Modal
-                animationType="fade"
+                animationType="slide"
                 transparent={true}
                 visible={modalVisible}
                 onRequestClose={() => {
                     setModalVisible(!modalVisible);
                 }}
             >
+                
 
                 <Pressable
                     style={[ styles.modalView]}
-                    onPress={() => setModalVisible(!modalVisible)}
+                    
                 >
+                    <Button
+                    style={styles.closeStyle} 
+                    onPress={() => setModalVisible(!modalVisible)}
+                    type="clear" icon={<Ionicons 
+                    name={"close"} size={44} 
+                    color="white"  />}/> 
               
                     <Text style={styles.modalText}>{props.text}</Text>
+                    
                     <TouchableOpacity
                         onPress={()=> showLocation({
                             latitude: props.lat,
@@ -76,11 +85,13 @@ export default GridTileLocation = props => {
                         })}
                     
                     >
+                    
                     <Text style={styles.addressText}>{props.text2}</Text>
                  
                     </TouchableOpacity>
                     
                 </Pressable>
+               
 
             </Modal>
 
@@ -114,6 +125,14 @@ const styles = StyleSheet.create({
         //flex: 0.5,
         alignItems: 'flex-start',
         
+        
+    },
+    closeStyle:{
+        marginTop: 0,
+        marginLeft: 260
+        //alignItems: 'center',
+        //justifyContent: "flex-end",
+
     },
     gridText: {
         fontSize: 18,
@@ -127,7 +146,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
 
         margin: 20,
-        marginTop: 200,
+        marginTop: 120,
         padding: 20,
         width: 350,
         height: 100,
@@ -141,13 +160,14 @@ const styles = StyleSheet.create({
         shadowRadius: 10
       },
       modalText: {
-        fontSize: 24,
+        fontSize: 34,
         fontWeight: 'bold',
         textAlign: 'left',
         color: "#faf3f3"
       },
       addressText: {
-        fontSize: 14,
+        marginTop:15,
+        fontSize: 16,
         fontWeight: 'bold',
         textAlign: 'left',
         color: "#faf3f3",
