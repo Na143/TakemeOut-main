@@ -1,5 +1,4 @@
 import React from "react";
-import { StyleSheet, View, Text, FlatList } from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeNavigator from './HomeNavigator'
@@ -26,7 +25,6 @@ export default MainNavigator = () => {
                             iconName = focused ? 'ios-pin' : 'ios-pin-outline'
                         }
 
-                        // You can return any component that you like here!
                         return <Ionicons name={iconName} size={size} color={color} />;
                     },
                 })}

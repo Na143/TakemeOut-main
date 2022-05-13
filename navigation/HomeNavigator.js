@@ -4,7 +4,7 @@ import HomeScreen from "../screens/HomeScreen";
 
 import CategoryScreen from "../screens/CategoryScreen";
 import MapScreen from '../screens/MapScreen';
-import { BackgroundImage } from "react-native-elements/dist/config";
+
 
 const HomeStack = createStackNavigator();
 

@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { Modal, Image, StyleSheet, Text, Pressable, TouchableOpacity } from "react-native";
+import { Modal,  StyleSheet, Text, Pressable, TouchableOpacity } from "react-native";
 import { showLocation } from 'react-native-map-link'
 import * as Location from "expo-location";
 import {Button} from 'react-native-elements';
@@ -102,8 +102,8 @@ const styles = StyleSheet.create({
         width: 300,
         height: 100,
         backgroundColor: '#d1d2fb',
-        //alignItems: "flex-end",
-        //justifyContent: "flex-end",
+        alignItems: "flex-start",
+        justifyContent: "flex-end",
         borderRadius: 10,
         shadowColor: "black",
         shadowOpacity: 0.25,
@@ -111,6 +111,7 @@ const styles = StyleSheet.create({
         shadowRadius: 10
     },
     favStyle:{
+        //flex: 0.5,
         alignItems: 'flex-start',
         
     },

@@ -38,17 +38,5 @@ export const LOCATIONS = [
   new Location('m25', 'c5', 'Südpol',53.54649,10.03282, 'Süderstraße 112, 20537 Hamburg', false),
   new Location('m26', 'c5', 'H1 Club & Lounge',53.56394,10.03646, 'Conventstraße 8-10/Eingang C, 22089 Hamburg', false),
   new Location('m27', 'c5', 'Mojo Club',53.55023,9.96793, 'Reeperbahn 1, 20359 Hamburg', false),
-  // new Event('m8', 'c3', 'Buy Beer', tr
-  // new Event('m9', 'c3', 'Buy Milk', true),
-  // new Event('m10', 'c4', 'Finish painting the boat', false),
-  // new Event('m11', 'c5', 'Call mom', false),
-  // new Event('m12', 'c5', 'Give back money to sis', false),
-  // new Event('m13', 'c6', 'Raspberry Pi', false),
-  // new Event('m14', 'c6', 'Socks', false),
-  // new Event('m15', 'c6', 'Cookbook', true),
-  // new Event('m16', 'c6', 'Yoga mat', true),
-  // new Event('m17', 'c7', 'Fix the AC', false),
-  // new Event('m18', 'c8', 'Bring Sunglasses', false),
-  // new Event('m19', 'c9', 'Write a new song', false),
-  // new Event('m20', 'c10', 'Learn React Native', true)
+  
 ];

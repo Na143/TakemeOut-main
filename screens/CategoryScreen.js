@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useContext } from "react";
-import { CATEGORIES, LOCATIONS } from '../data/Data';
-import { View, Text, Image, StyleSheet } from "react-native";
+
+import {  StyleSheet } from "react-native";
 
 import { FlatList } from "react-native";
 import { Button } from 'react-native-elements';
