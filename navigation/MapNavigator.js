@@ -12,9 +12,10 @@ export default MapNavigator = () => {
         <MapStack.Navigator initialRouteName='Karte' screenOptions={{
             headerStyle: { height: 120 },
             headerTitleStyle: {
-                fontSize: 32,
+                fontSize: 36,
                 fontWeight: 'bold',
-                color: '#94d0cc'
+                color: '#5049b3',
+                fontFamily: 'DanceToday'
 
             }
 

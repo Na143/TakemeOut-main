@@ -18,11 +18,14 @@ export default GridTileLocation = props => {
     const faveIconName = props.isFav ? "ios-star" : "ios-star-outline";
   
     useEffect(() => {
+      
       (async () => {
         let { status } = await Location.requestForegroundPermissionsAsync();
         if (status !== 'granted') {
           setErrorMsg('Permission to access location was denied');
-          return;
+          return ()=>{
+              cleanup
+          };
         }
         let location = await Location.getCurrentPositionAsync({});
         setLatitude(location.coords.latitude)
@@ -160,7 +163,7 @@ const styles = StyleSheet.create({
         shadowRadius: 10
       },
       modalText: {
-        fontSize: 34,
+        fontSize: 30,
         fontWeight: 'bold',
         textAlign: 'left',
         color: "#faf3f3"
@@ -168,7 +171,6 @@ const styles = StyleSheet.create({
       addressText: {
         marginTop:15,
         fontSize: 16,
-        fontWeight: 'bold',
         textAlign: 'left',
         color: "#faf3f3",
         textDecorationLine: 'underline'

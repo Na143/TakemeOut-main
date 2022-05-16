@@ -1,7 +1,7 @@
 import React from "react";
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from "../screens/HomeScreen";
-
+import {  StyleSheet } from "react-native";
 import CategoryScreen from "../screens/CategoryScreen";
 import MapScreen from '../screens/MapScreen';
 
@@ -14,15 +14,16 @@ export default HomeNavigator = () =>{
             <HomeStack.Navigator initialRouteName="Home" screenOptions={{
                 headerStyle:{height:120, backgroundColor: '#ffffff'},
                 headerTitleStyle:{
-                    fontSize:32,
+                    fontSize:36,
                     fontWeight:'bold',
-                    color:'#5049b3'
+                    color:'#5049b3',
+                    fontFamily: 'DanceToday'
 
 
                     }
 
                 }}>
-                <HomeStack.Screen name='Take Me Out - Now!' component={HomeScreen}/>
+                <HomeStack.Screen  name='Take Me Out' component={HomeScreen}/>
 
 
                 <HomeStack.Screen name='Category' component={CategoryScreen}/>
@@ -31,3 +32,9 @@ export default HomeNavigator = () =>{
 
     );
 }
+const styles = StyleSheet.create({
+    title: {
+     fontSize: 10
+    },
+   
+  });

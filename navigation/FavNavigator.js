@@ -10,9 +10,10 @@ export default FavNavigator = () => {
         <FavStack.Navigator initialRouteName='Favorites' screenOptions={{
             headerStyle: { height: 120, backgroundColor: '#ffffff'},
             headerTitleStyle: {
-                fontSize: 32,
+                fontSize: 36,
                 fontWeight: 'bold',
-                color: '#5049b3'
+                color: '#5049b3',
+                fontFamily: 'DanceToday'
 
             }
 

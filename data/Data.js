@@ -8,7 +8,6 @@ export const CATEGORIES = [
   new Category('c4', 'Kultur', '#d1d2fb'),
   new Category('c5', 'Clubs', '#d1d2fb'),
 
-  
 ];
 
 export const LOCATIONS = [
